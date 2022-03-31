@@ -19,9 +19,9 @@ class LaneLinesDetection:
         self.nonZeroY = None
         self.clear_visibility = True
         self.dir = []
-        self.left_curve_img = mpimg.imread('images/leftTurn.png')
-        self.right_curve_img = mpimg.imread('images/rightTurn.png')
-        self.keep_straight_img = mpimg.imread('images/straight.png')
+        self.left_curve_img = mpimg.imread('images/left.png')
+        self.right_curve_img = mpimg.imread('images/right.png')
+        self.keep_straight_img = mpimg.imread('images/strt.png')
         self.left_curve_img = cv2.normalize(src=self.left_curve_img, dst=None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
         self.right_curve_img = cv2.normalize(src=self.right_curve_img, dst=None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
         self.keep_straight_img = cv2.normalize(src=self.keep_straight_img, dst=None, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_8U)
@@ -179,7 +179,7 @@ class LaneLinesDetection:
             l = int(left_fitx[i])
             r = int(right_fitx[i])
             y = int(y)
-            cv2.line(outputImage, (l, y), (r, y), (0, 255, 0))
+            cv2.line(outputImage, (l, y), (r, y), (135,206,235))
 
         leftR, rightR, pos = self.measure_curvature()
 

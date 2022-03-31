@@ -50,7 +50,7 @@ def main():
 
     # for lane detection in "Video" set video to 1.
     if video:
-        findLaneLines.videoProcessing("test_video.mp4","testVideo_output.mp4")
+        findLaneLines.videoProcessing("project_video.mp4","testVideo_output.mp4")
     
     # for lane detection in "Image" set video to 0.
     else:
